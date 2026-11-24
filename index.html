@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#060B17" />
+  <title>Privacy Policy — DeepTick (Pomodoro Focus Timer)</title>
+  <style>
+    :root {
+      --bg-base: #060B17;
+      --bg-elevated: rgba(13, 21, 39, 0.84);
+      --bg-card: rgba(15, 23, 42, 0.72);
+      --bg-subtle: rgba(30, 41, 59, 0.45);
+      --border: rgba(148, 163, 184, 0.16);
+      --border-emerald: rgba(52, 211, 153, 0.30);
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+      --emerald: #34D399;
+      --emerald-soft: rgba(52, 211, 153, 0.13);
+      --indigo: #818CF8;
+      --sky: #38BDF8;
+      --amber: #FBBF24;
+      --amber-soft: rgba(251, 191, 36, 0.12);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max-w: 880px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(ellipse 75% 45% at 15% 0%, rgba(52, 211, 153, 0.14), transparent 70%),
+        radial-gradient(ellipse 65% 45% at 90% 10%, rgba(99, 102, 241, 0.14), transparent 70%),
+        radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.08), transparent 65%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    a {
+      color: var(--emerald);
+      text-decoration: none;
+      transition: color 0.16s ease, opacity 0.16s ease;
+    }
+
+    a:hover {
+      color: #6EE7B7;
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--emerald);
+      outline-offset: 2px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.875em;
+      color: #A7F3D0;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(52, 211, 153, 0.22);
+      padding: 0.12em 0.45em;
+      border-radius: 6px;
+      word-break: break-word;
+    }
+
+    /* Sticky Top Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(6, 11, 23, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #0D1B35 0%, #091122 100%);
+      border: 1px solid var(--border-emerald);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .brand-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .pkg-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--emerald);
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 6px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .lang-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.24), rgba(56, 189, 248, 0.18));
+      color: #ECFDF5;
+      box-shadow: inset 0 0 0 1px var(--border-emerald);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+
+    /* Hero Card */
+    .hero {
+      background: linear-gradient(160deg, rgba(15, 25, 48, 0.90) 0%, rgba(10, 17, 34, 0.92) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--emerald);
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .hero-subtitle {
+      margin: 0 0 22px;
+      color: var(--text-secondary);
+      font-size: 16.5px;
+      max-width: 68ch;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-item {
+      background: var(--bg-subtle);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Quick Highlights */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .highlight-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--emerald);
+      margin: 0 0 4px;
+    }
+
+    .highlight-desc {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+
+    .toc-title {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+    }
+
+    .toc-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 8px 18px;
+    }
+
+    .toc-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      padding: 2px 0;
+    }
+
+    .toc-list a:hover {
+      color: var(--emerald);
+    }
+
+    .toc-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--emerald);
+      min-width: 20px;
+    }
+
+    /* Policy Sections */
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .policy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+      color: var(--emerald);
+      font-size: 14px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20.5px;
+      line-height: 1.3;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.clean-list {
+      margin: 10px 0 12px;
+      padding-left: 20px;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 8px;
+    }
+
+    ul.clean-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--text-primary);
+    }
+
+    /* Callouts */
+    .callout {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+      font-size: 14.5px;
+      color: #D1FAE5;
+    }
+
+    .callout-amber {
+      background: var(--amber-soft);
+      border-color: rgba(251, 191, 36, 0.30);
+      color: #FEF3C7;
+    }
+
+    /* Permissions Grid */
+    .perm-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .perm-item {
+      background: rgba(9, 15, 30, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .perm-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .perm-name {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 15px;
+    }
+
+    .perm-tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #BAE6FD;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .perm-tag-optional {
+      background: rgba(148, 163, 184, 0.12);
+      color: var(--text-secondary);
+      border-color: rgba(148, 163, 184, 0.22);
+    }
+
+    .perm-desc {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Contact Box */
+    .contact-box {
+      margin-top: 14px;
+      background: rgba(9, 15, 30, 0.78);
+      border: 1px solid var(--border-emerald);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: baseline;
+    }
+
+    .contact-key {
+      min-width: 135px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .contact-val {
+      font-weight: 600;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      .topbar-inner {
+        padding: 10px 14px;
+      }
+
+      .pkg-badge {
+        display: none;
+      }
+
+      .container {
+        padding: 20px 14px 48px;
+      }
+
+      .hero {
+        padding: 22px 18px;
+        border-radius: 16px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        padding: 20px 18px;
+        border-radius: 16px;
+      }
+
+      h2 {
+        font-size: 18.5px;
+      }
+
+      .contact-key {
+        min-width: 100%;
+      }
+    }
+
+    /* Print Friendly */
+    @media print {
+      body {
+        background: #ffffff;
+        color: #111827;
+      }
+
+      .topbar, .toc {
+        display: none;
+      }
+
+      .hero, .policy-card, .highlight-card, .perm-item, .contact-box, .meta-item {
+        background: #ffffff;
+        border-color: #d1d5db;
+        box-shadow: none;
+        color: #111827;
+      }
+
+      h1, h2, strong, .meta-value, .perm-name, .contact-val {
+        color: #000000;
+      }
+
+      .callout, .callout-amber {
+        background: #f9fafb;
+        color: #111827;
+        border-color: #9ca3af;
+      }
+
+      code {
+        background: #f3f4f6;
+        color: #111827;
+        border-color: #d1d5db;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="#34D399" stroke-width="2" stroke-opacity="0.9" />
+            <path d="M8.5 12.2L10.9 14.6L15.8 9.4" stroke="#F1F5F9" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">DeepTick</span>
+          <span class="pkg-badge">com.turan.deeptick</span>
+        </div>
+      </div>
+
+      <div class="lang-toggle" role="group" aria-label="Language selection">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="lang-en">
+        <div class="eyebrow">Privacy Policy</div>
+        <h1>DeepTick (Pomodoro Focus Timer)</h1>
+        <p class="hero-subtitle">
+          Offline-first focus timer built with privacy by design. Your focus history, tasks, Star Atlas progress, and preferences stay strictly on your device.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Application</span>
+            <span class="meta-value">DeepTick (Pomodoro Focus Timer)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Package ID</span>
+            <span class="meta-value">com.turan.deeptick</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Developer</span>
+            <span class="meta-value">Turan Şimşek</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Effective Date</span>
+            <span class="meta-value">November 24, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-tr" hidden>
+        <div class="eyebrow">Gizlilik Politikası</div>
+        <h1>DeepTick (Pomodoro Odaklanma Zamanlayıcısı)</h1>
+        <p class="hero-subtitle">
+          Gizlilik odaklı, tamamen çevrimdışı (offline-first) çalışan odaklanma zamanlayıcısı. Odak geçmişiniz, görevleriniz, Yıldız Atlası ilerlemeniz ve tercihleriniz yalnızca cihazınızda saklanır.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Uygulama</span>
+            <span class="meta-value">DeepTick (Pomodoro Odaklanma Zamanlayıcısı)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Paket Adı</span>
+            <span class="meta-value">com.turan.deeptick</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Geliştirici</span>
+            <span class="meta-value">Turan Şimşek</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Yürürlük Tarihi</span>
+            <span class="meta-value">24 Kasım 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights" aria-label="Privacy summary">
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">No Accounts or Servers</p>
+          <p class="highlight-desc">No sign-up, no login, and zero personal data sent over the internet.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">Hesap veya Sunucu Yok</p>
+          <p class="highlight-desc">Üyelik gerekmez, internet üzerinden hiçbir kişisel veri gönderilmez.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">100% On-Device Storage</p>
+          <p class="highlight-desc">Sessions, tasks, streaks, and Star Atlas data live solely in local storage.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">%100 Cihaz İçi Depolama</p>
+          <p class="highlight-desc">Seanslar, görevler, seriler ve Yıldız Atlası yalnızca yerel hafızada tutulur.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="lang-en">
+          <p class="highlight-title">Zero Ads &amp; Trackers</p>
+          <p class="highlight-desc">No ad networks, no analytics SDKs, and no behavioral tracking.</p>
+        </div>
+        <div class="lang-tr" hidden>
+          <p class="highlight-title">Reklam &amp; İzleyici Yok</p>
+          <p class="highlight-desc">Reklam ağı, analitik SDK’sı veya davranışsal takip aracı içermez.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <div class="lang-en">
+        <p class="toc-title">Contents</p>
+        <ul class="toc-list">
+          <li><a href="#overview"><span class="toc-num">01</span>Overview &amp; Commitment</a></li>
+          <li><a href="#storage"><span class="toc-num">02</span>Information &amp; Local Storage</a></li>
+          <li><a href="#permissions"><span class="toc-num">03</span>Permissions &amp; Why We Use Them</a></li>
+          <li><a href="#third-party"><span class="toc-num">04</span>Third-Party Services</a></li>
+          <li><a href="#deletion"><span class="toc-num">05</span>Data Retention &amp; Deletion</a></li>
+          <li><a href="#children"><span class="toc-num">06</span>Children’s Privacy</a></li>
+          <li><a href="#changes"><span class="toc-num">07</span>Changes to This Policy</a></li>
+          <li><a href="#contact"><span class="toc-num">08</span>Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="lang-tr" hidden>
+        <p class="toc-title">İçindekiler</p>
+        <ul class="toc-list">
+          <li><a href="#overview"><span class="toc-num">01</span>Genel Bakış ve Taahhüt</a></li>
+          <li><a href="#storage"><span class="toc-num">02</span>Toplanan Bilgiler ve Yerel Depolama</a></li>
+          <li><a href="#permissions"><span class="toc-num">03</span>İzinler ve Kullanım Amaçları</a></li>
+          <li><a href="#third-party"><span class="toc-num">04</span>Üçüncü Taraf Hizmetler</a></li>
+          <li><a href="#deletion"><span class="toc-num">05</span>Veri Saklama ve Silme</a></li>
+          <li><a href="#children"><span class="toc-num">06</span>Çocukların Gizliliği</a></li>
+          <li><a href="#changes"><span class="toc-num">07</span>Politika Değişiklikleri</a></li>
+          <li><a href="#contact"><span class="toc-num">08</span>İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="sections">
+      <!-- 1. Overview -->
+      <section class="policy-card" id="overview">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">1</span>
+            <h2>Overview &amp; Privacy-First Commitment</h2>
+          </div>
+          <p>
+            This Privacy Policy explains how <strong>DeepTick (Pomodoro Focus Timer)</strong> (package name: <code>com.turan.deeptick</code>), developed by <strong>Turan Şimşek</strong>, handles user information on Android devices.
+          </p>
+          <p>
+            DeepTick is an <strong>offline-first</strong> Pomodoro timer and productivity companion. No account creation, sign-in, email address, phone number, or personal profile is required to use any feature of the application. We do not operate backend servers for user data, and we do not collect, sell, rent, or transmit your personal information to any external server.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">1</span>
+            <h2>Genel Bakış ve Gizlilik Taahhüdü</h2>
+          </div>
+          <p>
+            Bu Gizlilik Politikası, <strong>Turan Şimşek</strong> tarafından geliştirilen <strong>DeepTick (Pomodoro Odaklanma Zamanlayıcısı)</strong> uygulamasının (paket adı: <code>com.turan.deeptick</code>) Android cihazlardaki veri işleme yaklaşımını açıklar.
+          </p>
+          <p>
+            DeepTick, <strong>tamamen çevrimdışı (offline-first)</strong> çalışacak şekilde tasarlanmış bir Pomodoro zamanlayıcısıdır. Uygulamayı kullanmak için hesap açmanız, giriş yapmanız, adınızı veya e-posta adresinizi paylaşmanız gerekmez. Kullanıcı verilerini toplayan harici bir sunucumuz yoktur; kişisel verileriniz hiçbir şekilde toplanmaz, satılmaz veya dış sunuculara aktarılmaz.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Local Storage -->
+      <section class="policy-card" id="storage">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">2</span>
+            <h2>Information We Collect &amp; Local Storage</h2>
+          </div>
+          <p>
+            DeepTick does <strong>not</strong> collect personally identifiable information (such as your name, email address, contacts, precise location, or device advertising ID).
+          </p>
+          <p>
+            All data you generate inside the app is stored strictly <strong>locally on your device</strong> using React Native <code>AsyncStorage</code> (<code>@react-native-async-storage/async-storage</code>) and never leaves your device:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Focus Sessions &amp; Statistics:</strong> Session timestamps, focus durations, optional linked task IDs/titles, and whether Strict Focus Mode was enabled — used solely to display your daily, weekly, monthly, and all-time charts.</li>
+            <li><strong>Daily Goals &amp; Streaks:</strong> Your configured daily focus target (in minutes), consecutive active-day streaks, best streak records, and 30-day activity calendar.</li>
+            <li><strong>Tasks:</strong> Task titles you type, target session counts, completed session counters, completion flags, and your currently selected task.</li>
+            <li><strong>Star Atlas &amp; Achievements:</strong> Star Energy balance, completed constellations, custom constellation names you choose, unlocked achievement badges, and unlocked cosmic themes.</li>
+            <li><strong>App Preferences:</strong> Timer durations (focus, short break, long break, cycle length), timer mode (countdown or stopwatch), selected ambient sound and volume, background/cosmic theme, sound/vibration/keep-awake toggles, Strict Focus Mode preference, notification &amp; daily reminder schedule (including the local notification identifier), and selected language.</li>
+          </ul>
+          <div class="callout">
+            DeepTick does not use SQLite cloud sync, SecureStore external sync, or remote backup servers. All records exist exclusively inside your device’s private app storage.
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">2</span>
+            <h2>Toplanan Bilgiler ve Yerel Depolama</h2>
+          </div>
+          <p>
+            DeepTick; adınız, e-posta adresiniz, rehberiniz, konumunuz veya reklam kimliğiniz gibi kişisel olarak tanımlanabilir hiçbir veriyi <strong>toplamaz</strong>.
+          </p>
+          <p>
+            Uygulama içinde oluşturduğunuz tüm kayıtlar yalnızca React Native <code>AsyncStorage</code> (<code>@react-native-async-storage/async-storage</code>) kullanılarak <strong>cihazınızın yerel depolama alanında</strong> saklanır ve cihaz dışına çıkmaz:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Odak Oturumları ve İstatistikler:</strong> Oturum zaman damgaları, odaklanma süreleri, isteğe bağlı görev eşleştirmeleri ve Sıkı Odak Modu bilgisi — yalnızca günlük, haftalık, aylık ve tüm zamanlar grafiklerinizi hesaplamak için kullanılır.</li>
+            <li><strong>Günlük Hedefler ve Seriler:</strong> Belirlediğiniz günlük dakika hedefi, kesintisiz odaklanma serileriniz, en iyi seri rekorunuz ve son 30 gün takviminiz.</li>
+            <li><strong>Görevler:</strong> Eklediğiniz görev adları, hedef seans sayıları, tamamlanma durumları ve aktif seçili göreviniz.</li>
+            <li><strong>Yıldız Atlası ve Başarımlar:</strong> Yıldız Enerjisi bakiyeniz, tamamladığınız takımyıldızları, takımyıldızlarına verdiğiniz özel isimler, açılan rozetler ve kozmik temalar.</li>
+            <li><strong>Uygulama Tercihleri:</strong> Sayaç süreleri (odak, kısa/uzun mola, döngü), sayaç modu, seçili ambiyans sesi ve ses düzeyi, arka plan/kozmik tema, ses/titreşim/ekranı açık tutma ayarları, Sıkı Odak Modu seçimi, bildirim ve günlük hatırlatma saati (yerel bildirim kimliği dahil) ile dil tercihiniz.</li>
+          </ul>
+          <div class="callout">
+            DeepTick bulut senkronizasyonu veya uzak veritabanı kullanmaz. Tüm kayıtlar yalnızca cihazınızın özel uygulama depolama alanında tutulur.
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Permissions -->
+      <section class="policy-card" id="permissions">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">3</span>
+            <h2>Permissions &amp; Why We Use Them</h2>
+          </div>
+          <p>
+            DeepTick requests only the device capabilities needed to run a reliable focus timer, ambient audio player, and notification system. Below is every Android permission and on-device capability present in the application build and why it exists:
+          </p>
+
+          <div class="perm-list">
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Notifications &amp; Boot Restoration</span>
+                <span class="perm-tag"><code>POST_NOTIFICATIONS</code> · <code>RECEIVE_BOOT_COMPLETED</code></span>
+              </div>
+              <p class="perm-desc">
+                Used strictly on-device to notify you when a focus or break timer finishes, deliver optional daily focus reminders at your chosen time, warn you if you leave the app during Strict Focus Mode, and restore scheduled local reminders if your device restarts.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Ambient Audio &amp; Background Playback</span>
+                <span class="perm-tag"><code>FOREGROUND_SERVICE</code> · <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> · <code>MODIFY_AUDIO_SETTINGS</code></span>
+              </div>
+              <p class="perm-desc">
+                Used by the built-in audio player (<code>expo-audio</code>) to play bundled ambient soundscapes (Rain, Cafe, Nature, Ocean) and timer completion chimes reliably, including when the screen is turned off.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Microphone Manifest Declaration Notice</span>
+                <span class="perm-tag perm-tag-optional"><code>RECORD_AUDIO</code> (Framework Default · Unused)</span>
+              </div>
+              <p class="perm-desc">
+                The <code>expo-audio</code> SDK automatically includes the <code>RECORD_AUDIO</code> permission entry in the Android manifest by default. <strong>DeepTick never requests runtime microphone access and never records, accesses, stores, or transmits any audio from your microphone.</strong>
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Vibration &amp; Haptic Feedback</span>
+                <span class="perm-tag"><code>VIBRATE</code></span>
+              </div>
+              <p class="perm-desc">
+                Provides optional tactile alerts when timers complete or buttons are tapped (<code>expo-haptics</code>), respecting both your in-app toggle and Android system haptic settings.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Keep Screen Awake</span>
+                <span class="perm-tag"><code>WAKE_LOCK</code></span>
+              </div>
+              <p class="perm-desc">
+                Prevents your screen from dimming or sleeping while a timer is actively running (<code>expo-keep-awake</code>). You can disable this anytime under Menu → Screen Settings.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Strict Focus Mode (App-State Check)</span>
+                <span class="perm-tag perm-tag-optional">On-Device <code>AppState</code> Only</span>
+              </div>
+              <p class="perm-desc">
+                When you enable Strict Focus Mode, DeepTick checks in memory whether DeepTick itself moves to the background so it can reset the active session after a 5-second grace period. DeepTick does <strong>not</strong> use Usage Access or Accessibility permissions and cannot see which other apps you open.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Standard Runtime &amp; Legacy Framework Permissions</span>
+                <span class="perm-tag perm-tag-optional"><code>INTERNET</code> · Legacy Storage (<code>maxSdkVersion=32</code>)</span>
+              </div>
+              <p class="perm-desc">
+                <code>INTERNET</code> is declared by the underlying React Native/Expo runtime and optional Google Play In-App Review integration; DeepTick itself makes no network requests to developer servers. Legacy storage attributes (<code>READ_EXTERNAL_STORAGE</code> / <code>WRITE_EXTERNAL_STORAGE</code> capped at Android 12 / SDK 32) are inherited from framework defaults — DeepTick never requests or accesses your photos, media, or external files.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">3</span>
+            <h2>İzinler ve Kullanım Amaçları</h2>
+          </div>
+          <p>
+            DeepTick yalnızca güvenilir bir odak sayacı, arka plan ses oynatıcısı ve yerel bildirim deneyimi sunmak için gerekli izinleri kullanır. Uygulama derlemesinde yer alan tüm Android izinleri ve cihaz içi kontroller aşağıda açıklanmıştır:
+          </p>
+
+          <div class="perm-list">
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Bildirimler ve Açılış Sonrası Hatırlatma</span>
+                <span class="perm-tag"><code>POST_NOTIFICATIONS</code> · <code>RECEIVE_BOOT_COMPLETED</code></span>
+              </div>
+              <p class="perm-desc">
+                Odak veya mola süresi bittiğinde yerel bildirim göstermek, seçtiğiniz saatte isteğe bağlı günlük odak hatırlatması göndermek, Sıkı Odak Modu sırasında uygulamadan ayrıldığınızda uyarmak ve cihaz yeniden başlatıldığında planlı hatırlatmaları korumak için yalnızca cihaz üzerinde kullanılır.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Ambiyans Sesleri ve Arka Planda Oynatma</span>
+                <span class="perm-tag"><code>FOREGROUND_SERVICE</code> · <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> · <code>MODIFY_AUDIO_SETTINGS</code></span>
+              </div>
+              <p class="perm-desc">
+                Uygulama içindeki dahili odak seslerini (Yağmur, Kafe, Vahşi Doğa, Deniz) ve seans bitiş sesini ekran kapalıyken dahi kesintisiz oynatabilmek için <code>expo-audio</code> tarafından kullanılır.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Mikrofon Manifest Bildirimi Hakkında</span>
+                <span class="perm-tag perm-tag-optional"><code>RECORD_AUDIO</code> (Altyapı Varsayılanı · Kullanılmaz)</span>
+              </div>
+              <p class="perm-desc">
+                Kullanılan <code>expo-audio</code> kütüphanesi Android manifest dosyasına varsayılan olarak <code>RECORD_AUDIO</code> tanımı ekler. <strong>DeepTick çalışma zamanında mikrofon izni istemez ve mikrofonunuzdan hiçbir zaman ses kaydetmez, dinlemez, saklamaz veya iletmez.</strong>
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Titreşim ve Dokunsal Geri Bildirim</span>
+                <span class="perm-tag"><code>VIBRATE</code></span>
+              </div>
+              <p class="perm-desc">
+                Seans bitişlerinde ve etkileşimlerde isteğe bağlı dokunsal geri bildirim (<code>expo-haptics</code>) sağlamak için uygulama ve sistem ayarlarınıza bağlı olarak kullanılır.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Ekranı Sürekli Açık Tutma</span>
+                <span class="perm-tag"><code>WAKE_LOCK</code></span>
+              </div>
+              <p class="perm-desc">
+                Sayaç çalışırken ekranın otomatik kapanmasını önlemek için (<code>expo-keep-awake</code>) kullanılır. Menü → Ekran Ayarları üzerinden dilediğiniz zaman kapatabilirsiniz.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Sıkı Odak Modu (Uygulama Durumu Kontrolü)</span>
+                <span class="perm-tag perm-tag-optional">Yalnızca Cihaz İçi <code>AppState</code></span>
+              </div>
+              <p class="perm-desc">
+                Sıkı Odak Modu açıkken yalnızca DeepTick’in arka plana geçip geçmediğini bellekte kontrol ederek 5 saniyeden uzun ayrılmalarda seansı sıfırlar. Kullanım Erişimi veya Erişilebilirlik izni istemez ve başka hangi uygulamaları kullandığınızı göremez.
+              </p>
+            </div>
+
+            <div class="perm-item">
+              <div class="perm-top">
+                <span class="perm-name">Standart Altyapı ve Eski Sürüm İzinleri</span>
+                <span class="perm-tag perm-tag-optional"><code>INTERNET</code> · Eski Depolama (<code>maxSdkVersion=32</code>)</span>
+              </div>
+              <p class="perm-desc">
+                <code>INTERNET</code> izni React Native/Expo çalışma ortamı ve isteğe bağlı Google Play Uygulama İçi Değerlendirme akışı için standart olarak bulunur; DeepTick geliştirici sunucularına hiçbir ağ isteği göndermez. Android 12 ve öncesi (<code>maxSdkVersion=32</code>) depolama girdileri çerçeve varsayılanıdır; DeepTick fotoğraf veya dosyalarınıza asla erişmez.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Third-Party Services -->
+      <section class="policy-card" id="third-party">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">4</span>
+            <h2>Third-Party Services</h2>
+          </div>
+          <p>
+            Based on DeepTick’s codebase and dependencies, the app does <strong>not</strong> include any advertising SDKs, analytics platforms, crash-reporting services, behavioral trackers, social logins, or data brokers.
+          </p>
+          <ul class="clean-list">
+            <li><strong>Google Play Services &amp; In-App Review (<code>expo-store-review</code>):</strong> After completing focus session milestones (every 3 completed focus sessions), DeepTick may request the native Google Play In-App Review prompt on supported devices. Any interaction with that dialog is handled directly by Google Play Services under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>. DeepTick does not receive your Google account identity, email address, or review metadata.</li>
+            <li><strong>Expo &amp; Device Operating System Libraries:</strong> DeepTick uses standard open-source Expo/React Native device modules (audio playback, local notifications, haptics, keep-awake, localization, and local AsyncStorage) that execute locally on your device without transmitting user data externally.</li>
+          </ul>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">4</span>
+            <h2>Üçüncü Taraf Hizmetler</h2>
+          </div>
+          <p>
+            DeepTick’in kaynak kodu ve bağımlılıkları doğrultusunda uygulama içinde <strong>hiçbir</strong> reklam ağı, analitik SDK’sı, çökme raporlama servisi, izleyici, sosyal medya girişi veya veri aracısı bulunmamaktadır.
+          </p>
+          <ul class="clean-list">
+            <li><strong>Google Play Hizmetleri ve Uygulama İçi Değerlendirme (<code>expo-store-review</code>):</strong> Belirli odak seansı dönüm noktalarından sonra (her 3 tamamlanan odak oturumunda) uygulama, desteklenen cihazlarda yerel Google Play Uygulama İçi Değerlendirme penceresini çağırabilir. Bu pencere üzerinden gerçekleşen tüm işlemler doğrudan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Gizlilik Politikası</a> kapsamında Google Play Hizmetleri tarafından yürütülür; DeepTick hesap bilginizi veya e-posta adresinizi almaz.</li>
+            <li><strong>Expo ve Cihaz İşletim Sistemi Modülleri:</strong> Ses oynatma, yerel bildirimler, titreşim, ekranı açık tutma, dil algılama ve yerel AsyncStorage modülleri tamamen cihazınız üzerinde çalışır ve dışarıya veri göndermez.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Data Retention & Deletion -->
+      <section class="policy-card" id="deletion">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">5</span>
+            <h2>Data Retention &amp; Deletion</h2>
+          </div>
+          <p>
+            Because DeepTick stores all records locally on your device and maintains no server-side copies, your data remains on your phone or tablet only for as long as you keep the app installed. You stay in complete control:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Delete Individual Tasks:</strong> You can delete any task at any time directly inside the Tasks sheet in the app.</li>
+            <li><strong>Erase All App Data:</strong> To permanently wipe all local focus sessions, streaks, tasks, Star Atlas progress, and preferences, open <strong>Android Settings → Apps → DeepTick → Storage &amp; cache → Clear storage / Clear data</strong> (note: DeepTick does not include a separate one-tap “Reset All Data” button inside the app settings).</li>
+            <li><strong>Uninstall the App:</strong> Uninstalling DeepTick permanently removes all locally stored application data from your device.</li>
+          </ul>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">5</span>
+            <h2>Veri Saklama ve Silme Hakları</h2>
+          </div>
+          <p>
+            DeepTick tüm kayıtları yalnızca cihazınızda sakladığı ve sunucu tarafında hiçbir kopya tutmadığı için verileriniz yalnızca uygulama cihazınızda yüklü olduğu sürece korunur. Kontrol tamamen sizdedir:
+          </p>
+          <ul class="clean-list">
+            <li><strong>Görevleri Tek Tek Silme:</strong> Oluşturduğunuz görevleri uygulama içindeki Görevler penceresinden istediğiniz an silebilirsiniz.</li>
+            <li><strong>Tüm Verileri Kalıcı Olarak Silme:</strong> Tüm odak geçmişini, serileri, görevleri, Yıldız Atlası ilerlemesini ve tercihleri kalıcı olarak temizlemek için <strong>Android Ayarlar → Uygulamalar → DeepTick → Depolama ve önbellek → Depolamayı temizle / Verileri temizle</strong> yolunu izleyebilirsiniz (not: uygulama içinde ayrıca tek dokunuşlu toplu sıfırlama düğmesi yer almamaktadır).</li>
+            <li><strong>Uygulamayı Kaldırma:</strong> DeepTick’i cihazınızdan kaldırdığınızda tüm yerel uygulama verileri kalıcı olarak silinir.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 6. Children's Privacy -->
+      <section class="policy-card" id="children">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">6</span>
+            <h2>Children’s Privacy</h2>
+          </div>
+          <p>
+            DeepTick is a general-audience productivity timer and does not knowingly collect, store, or solicit personal information from children under the age of 13 (or the applicable minimum age in your jurisdiction). Because the app collects no personal data from any user and requires no account, no personal information of children is ever processed or transmitted. If you believe a child has somehow provided personal information via email support, please contact us so we can delete that correspondence immediately.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">6</span>
+            <h2>Çocukların Gizliliği</h2>
+          </div>
+          <p>
+            DeepTick genel kullanıma yönelik bir üretkenlik zamanlayıcısıdır ve 13 yaşın altındaki (veya bulunduğunuz ülkedeki geçerli dijital rıza yaşının altındaki) çocuklardan bilerek hiçbir kişisel veri toplamaz veya talep etmez. Uygulama herhangi bir kullanıcıdan kişisel bilgi toplamadığı ve üyelik gerektirmediği için çocuklara ait kişisel veriler işlenmez veya iletilmez. Destek e-postası yoluyla bir çocuğa ait kişisel bilgi paylaşıldığını düşünüyorsanız derhal silmemiz için bizimle iletişime geçebilirsiniz.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Changes -->
+      <section class="policy-card" id="changes">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">7</span>
+            <h2>Changes to This Privacy Policy</h2>
+          </div>
+          <p>
+            We may update this Privacy Policy from time to time if we add new features, adjust app permissions, or update legal disclosures. Any changes will be posted on this page with an updated <strong>Effective Date</strong> at the top. We encourage you to review this page periodically.
+          </p>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">7</span>
+            <h2>Gizlilik Politikası Değişiklikleri</h2>
+          </div>
+          <p>
+            Yeni özellikler eklendiğinde, uygulama izinleri güncellendiğinde veya yasal bilgilendirmeler gerektiğinde bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yapılan tüm değişiklikler sayfanın üst kısmındaki <strong>Yürürlük Tarihi</strong> yenilenerek bu sayfada yayımlanır.
+          </p>
+        </div>
+      </section>
+
+      <!-- 8. Contact -->
+      <section class="policy-card" id="contact">
+        <div class="lang-en">
+          <div class="section-head">
+            <span class="section-num">8</span>
+            <h2>Contact Us</h2>
+          </div>
+          <p>
+            If you have any questions, feedback, or privacy requests regarding DeepTick, please contact the developer:
+          </p>
+          <div class="contact-box">
+            <div class="contact-row">
+              <span class="contact-key">Developer</span>
+              <span class="contact-val">Turan Şimşek</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Application</span>
+              <span class="contact-val">DeepTick (<code>com.turan.deeptick</code>)</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Support Email</span>
+              <span class="contact-val"><a href="mailto:[DESTEK_EPOSTA_ADRESIN]">[DESTEK_EPOSTA_ADRESIN]</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-tr" hidden>
+          <div class="section-head">
+            <span class="section-num">8</span>
+            <h2>İletişim</h2>
+          </div>
+          <p>
+            DeepTick veya bu Gizlilik Politikası ile ilgili her türlü soru, görüş ve talebiniz için geliştiriciyle iletişime geçebilirsiniz:
+          </p>
+          <div class="contact-box">
+            <div class="contact-row">
+              <span class="contact-key">Geliştirici</span>
+              <span class="contact-val">Turan Şimşek</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Uygulama</span>
+              <span class="contact-val">DeepTick (<code>com.turan.deeptick</code>)</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-key">Destek E-postası</span>
+              <span class="contact-val"><a href="mailto:[DESTEK_EPOSTA_ADRESIN]">[DESTEK_EPOSTA_ADRESIN]</a></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="lang-en">
+        © 2026 Turan Şimşek · DeepTick (Pomodoro Focus Timer) · All processing stays on your device.
+      </div>
+      <div class="lang-tr" hidden>
+        © 2026 Turan Şimşek · DeepTick (Pomodoro Odaklanma Zamanlayıcısı) · Tüm işlemler cihazınızda kalır.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var TITLES = {
+        en: 'Privacy Policy — DeepTick (Pomodoro Focus Timer)',
+        tr: 'Gizlilik Politikası — DeepTick (Pomodoro Odaklanma Zamanlayıcısı)'
+      };
+      var buttons = document.querySelectorAll('.lang-btn[data-lang]');
+      var enBlocks = document.querySelectorAll('.lang-en');
+      var trBlocks = document.querySelectorAll('.lang-tr');
+
+      function setLanguage(lang) {
+        var resolved = lang === 'tr' ? 'tr' : 'en';
+        document.documentElement.lang = resolved;
+        document.title = TITLES[resolved];
+
+        for (var i = 0; i < enBlocks.length; i++) {
+          enBlocks[i].hidden = resolved !== 'en';
+        }
+        for (var j = 0; j < trBlocks.length; j++) {
+          trBlocks[j].hidden = resolved !== 'tr';
+        }
+        for (var k = 0; k < buttons.length; k++) {
+          var isMatch = buttons[k].getAttribute('data-lang') === resolved;
+          buttons[k].setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+        }
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          setLanguage(this.getAttribute('data-lang'));
+        });
+      }
+
+      var initialLang = 'en';
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('lang') === 'tr') {
+          initialLang = 'tr';
+        }
+      } catch (e) {}
+
+      setLanguage(initialLang);
+    })();
+  </script>
+</body>
+</html>
